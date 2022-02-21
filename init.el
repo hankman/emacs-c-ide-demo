@@ -99,7 +99,7 @@
  '(objed-cursor-color "#CC9393")
  '(package-selected-packages
    (quote
-    (magit yasnippet-snippets nyan-mode zygospore zenburn-theme yasnippet ws-butler wn-mode volatile-highlights use-package undo-tree spaceline solarized-theme iedit helm-themes helm-swoop helm-projectile helm-gtags dtrt-indent dream-theme doom-themes doom-modeline company comment-dwim-2 clean-aindent-mode atom-dark-theme arc-dark-theme anzu)))
+    (dap-mode helm-xref which-key flycheck helm-lsp lsp-treemacs lsp-mode magit yasnippet-snippets nyan-mode zygospore zenburn-theme yasnippet ws-butler wn-mode volatile-highlights use-package undo-tree spaceline solarized-theme iedit helm-themes helm-swoop helm-projectile helm-gtags dtrt-indent dream-theme doom-themes doom-modeline company comment-dwim-2 clean-aindent-mode atom-dark-theme arc-dark-theme anzu)))
  '(pos-tip-background-color "#4F4F4F")
  '(pos-tip-foreground-color "#FFFFEF")
  '(rustic-ansi-faces
@@ -123,3 +123,21 @@
  '(powerline-active0 ((t (:inherit mode-line :background "#010000"))))
  '(powerline-active1 ((t (:inherit mode-line :background "color-18"))))
  '(vertical-border ((t (:background "color-247" :foreground "color-22")))))
+
+
+;; Setup lsp
+(which-key-mode)
+(add-hook 'c-mode-hook 'lsp)
+(add-hook 'c++-mode-hook 'lsp)
+
+(setq gc-cons-threshold (* 100 1024 1024)
+      read-process-output-max (* 1024 1024)
+      treemacs-space-between-root-nodes nil
+      company-idle-delay 0.0
+      company-minimum-prefix-length 1
+      lsp-idle-delay 0.1)  ;; clangd is fast
+
+(with-eval-after-load 'lsp-mode
+  (add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration)
+  (require 'dap-cpptools)
+  (yas-global-mode))
