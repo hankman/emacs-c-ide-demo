@@ -246,6 +246,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(error ((t (:background "brightyellow" :foreground "color-160" :weight bold))))
  '(mode-line-inactive ((t (:background "color-247" :foreground "#5F7F5F"))))
  '(powerline-active0 ((t (:inherit mode-line :background "#010000"))))
  '(powerline-active1 ((t (:inherit mode-line :background "color-18"))))
