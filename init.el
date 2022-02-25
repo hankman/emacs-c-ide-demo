@@ -42,6 +42,7 @@
 (global-set-key [(f10)] 'bookmark-set)
 (global-set-key [(f3)] 'dired)
 
+
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 ;; custom c++
@@ -129,9 +130,7 @@
                 (quote powerline-active2)
               (quote powerline-inactive2)))
            (face-hl
-            (if active
-                (quote wn-modeline-face)
-              face1))
+            (quote wn-modeline-face))
            (separator-left
             (intern
              (format "powerline-%s-%s"
@@ -145,7 +144,7 @@
            (lhs
             (list
              (powerline-raw
-              (format "%s"
+              (format " %s"
                       (wn--selected-window-number))
               face-hl
               (quote l))
@@ -238,6 +237,7 @@
  '(weechat-color-list
    (quote
     (unspecified "#3F3F3F" "#4F4F4F" "#9f5c5c" "#CC9393" "#488249" "#7F9F7F" "#b6a576" "#F0DFAF" "#57a2a4" "#8CD0D3" "#aa5790" "#DC8CC3" "#5dacaf" "#93E0E3" "#DCDCCC" "#6F6F6F")))
+ '(wn-mode t)
  '(xterm-color-names
    ["#4F4F4F" "#CC9393" "#7F9F7F" "#F0DFAF" "#8CD0D3" "#DC8CC3" "#93E0E3" "#fffff6"])
  '(xterm-color-names-bright
@@ -247,10 +247,14 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(mode-line-inactive ((t (:background "color-247" :foreground "#5F7F5F"))))
  '(powerline-active0 ((t (:inherit mode-line :background "#010000"))))
  '(powerline-active1 ((t (:inherit mode-line :background "color-18"))))
+ '(powerline-inactive0 ((t (:inherit mode-line-inactive))))
+ '(powerline-inactive1 ((t (:inherit mode-line-inactive :background "color-247"))))
+ '(powerline-inactive2 ((t (:inherit mode-line-inactive :background "color-247"))))
  '(vertical-border ((t (:background "color-247" :foreground "color-22"))))
- '(wn-modeline-face ((t (:background "yellow" :foreground "color-52")))))
+ '(wn-modeline-face ((t (:background "color-28" :foreground "color-52")))))
 
 
 ;; Setup lsp

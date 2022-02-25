@@ -6,6 +6,8 @@
 
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+(show-paren-mode 1)
+
 ;; show unncessary whitespace that can mess up your diff
 (add-hook 'prog-mode-hook
           (lambda () (interactive)
@@ -18,7 +20,7 @@
 (setq-default tab-width 4)
 
 ;; Compilation
-(global-set-key (kbd "<f5>") (lambda ()
+(global-set-key (kbd "<f12>") (lambda ()
                                (interactive)
                                (setq-local compilation-read-command nil)
                                (call-interactively 'compile)))
@@ -57,5 +59,6 @@
 ;; activate whitespace-mode to view all whitespace characters
 (global-set-key (kbd "C-c w") 'whitespace-mode)
 (windmove-default-keybindings)
+(xterm-mouse-mode)
 
 (provide 'setup-general)

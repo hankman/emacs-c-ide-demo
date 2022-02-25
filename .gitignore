@@ -58,3 +58,5 @@ projectile*
 semanticdb
 transient
 ede-projects.el
+recentf
+.dap-breakpoints
