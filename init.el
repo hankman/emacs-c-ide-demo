@@ -65,12 +65,16 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(company-global-modes (quote (not eshell-mode)))
+ '(company-idle-delay 0.0)
+ '(company-minimum-prefix-length 1)
  '(compilation-message-face (quote default))
  '(cua-global-mark-cursor-color "#93E0E3")
  '(cua-normal-cursor-color "#DCDCCC")
  '(cua-overwrite-cursor-color "#F0DFAF")
  '(cua-read-only-cursor-color "#7F9F7F")
  '(exwm-floating-border-color "#262626")
+ '(global-company-mode t)
  '(highlight-changes-colors (quote ("#DC8CC3" "#bbb0cb")))
  '(highlight-symbol-colors
    (quote
@@ -141,7 +145,10 @@
            (lhs
             (list
              (powerline-raw
-              (format "%s" (wn--selected-window-number)) face-hl (quote l))
+              (format "%s"
+                      (wn--selected-window-number))
+              face-hl
+              (quote l))
              (funcall separator-left face-hl face0)
              (powerline-raw "%*" face0
                             (quote l))
@@ -175,8 +182,6 @@
              (powerline-major-mode face1
                                    (quote l))
              (powerline-process face1)
-             ;(powerline-minor-modes face1
-             ;                       (quote l))
              (powerline-narrow face1
                                (quote l))
              (powerline-raw " " face1)
@@ -185,7 +190,8 @@
                            (quote r))
              (when
                  (bound-and-true-p nyan-mode)
-               (powerline-raw (list
+               (powerline-raw
+                (list
                  (nyan-create))
                 face2
                 (quote l)))))
@@ -255,8 +261,6 @@
 (setq gc-cons-threshold (* 100 1024 1024)
       read-process-output-max (* 1024 1024)
       treemacs-space-between-root-nodes nil
-      company-idle-delay 0.0
-      company-minimum-prefix-length 1
       lsp-idle-delay 0.1)  ;; clangd is fast
 
 (with-eval-after-load 'lsp-mode
