@@ -59,6 +59,11 @@
 ;; activate whitespace-mode to view all whitespace characters
 (global-set-key (kbd "C-c w") 'whitespace-mode)
 (windmove-default-keybindings)
-(xterm-mouse-mode)
+
+(xterm-mouse-mode 1)
+
+(require 'rainbow-delimiters)
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+
 
 (provide 'setup-general)

@@ -225,7 +225,7 @@
  '(objed-cursor-color "#CC9393")
  '(package-selected-packages
    (quote
-    (dap-mode helm-xref which-key flycheck helm-lsp lsp-treemacs lsp-mode magit yasnippet-snippets nyan-mode zygospore zenburn-theme yasnippet ws-butler wn-mode volatile-highlights use-package undo-tree spaceline solarized-theme iedit helm-themes helm-swoop helm-projectile helm-gtags dtrt-indent dream-theme doom-themes doom-modeline company comment-dwim-2 clean-aindent-mode atom-dark-theme arc-dark-theme anzu)))
+    (rainbow-delimiters dap-mode helm-xref which-key flycheck helm-lsp lsp-treemacs lsp-mode magit yasnippet-snippets nyan-mode zygospore zenburn-theme yasnippet ws-butler wn-mode volatile-highlights use-package undo-tree spaceline solarized-theme iedit helm-themes helm-swoop helm-projectile helm-gtags dtrt-indent dream-theme doom-themes doom-modeline company comment-dwim-2 clean-aindent-mode atom-dark-theme arc-dark-theme anzu)))
  '(pos-tip-background-color "#4F4F4F")
  '(pos-tip-foreground-color "#FFFFEF")
  '(rustic-ansi-faces
@@ -261,6 +261,7 @@
 (which-key-mode)
 (add-hook 'c-mode-hook 'lsp)
 (add-hook 'c++-mode-hook 'lsp)
+
 
 (setq gc-cons-threshold (* 100 1024 1024)
       read-process-output-max (* 1024 1024)
