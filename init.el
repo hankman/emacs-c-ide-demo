@@ -16,6 +16,9 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 
+(require 'powerline)
+(powerline-default-theme)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -229,9 +232,6 @@
 (wn-mode)
 
 (load-theme 'zenburn t)
-
-(require 'powerline)
-(powerline-default-theme)
 
 (require 'nyan-mode)
 (nyan-mode)
