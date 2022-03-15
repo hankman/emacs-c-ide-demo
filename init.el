@@ -16,53 +16,6 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 
-(add-to-list 'load-path "~/.emacs.d/custom")
-
-(require 'setup-general)
-(if (version< emacs-version "24.4")
-    (require 'setup-ivy-counsel)
-  (require 'setup-helm)
-  (require 'setup-helm-gtags))
-;; (require 'setup-ggtags)
-(require 'setup-cedet)
-(require 'setup-editing)
-
-(wn-mode)
-
-(load-theme 'zenburn t)
-
-(require 'powerline)
-(powerline-default-theme)
-
-(require 'nyan-mode)
-(nyan-mode)
-
-(global-set-key [(f4)] 'eshell)
-(global-set-key [(f5)] 'goto-line)
-(global-set-key [(f7)] 'compile)
-(global-set-key [(f6)] 'speedbar-get-focus)
-(global-set-key [(f9)] 'list-bookmarks)
-(global-set-key [(f10)] 'bookmark-set)
-(global-set-key [(f3)] 'dired)
-
-
-(defalias 'yes-or-no-p 'y-or-n-p)
-
-;; custom c++
-(require 'yasnippet)
-(yas-global-mode 1)
-
-(c-add-style "microsoft"
-             '("stroustrup"
-               (c-offsets-alist
-                (innamespace . -)
-                (inline-open . 0)
-                (inher-cont . c-lineup-multi-inher)
-                (arglist-cont-nonempty . +)
-                (template-args-cont . +))))
-(setq c-default-style "microsoft")
-
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -261,5 +214,51 @@
  '(vertical-border ((t (:background "color-247" :foreground "color-22"))))
  '(wn-modeline-face ((t (:background "color-28" :foreground "color-52")))))
 
+
+(add-to-list 'load-path "~/.emacs.d/custom")
+
+(require 'setup-general)
+(if (version< emacs-version "24.4")
+    (require 'setup-ivy-counsel)
+  (require 'setup-helm)
+  (require 'setup-helm-gtags))
+;; (require 'setup-ggtags)
+(require 'setup-cedet)
+(require 'setup-editing)
+
+(wn-mode)
+
+(load-theme 'zenburn t)
+
+(require 'powerline)
+(powerline-default-theme)
+
+(require 'nyan-mode)
+(nyan-mode)
+
+(global-set-key [(f4)] 'eshell)
+(global-set-key [(f5)] 'goto-line)
+(global-set-key [(f7)] 'compile)
+(global-set-key [(f6)] 'speedbar-get-focus)
+(global-set-key [(f9)] 'list-bookmarks)
+(global-set-key [(f10)] 'bookmark-set)
+(global-set-key [(f3)] 'dired)
+
+
+(defalias 'yes-or-no-p 'y-or-n-p)
+
+;; custom c++
+(require 'yasnippet)
+(yas-global-mode 1)
+
+(c-add-style "microsoft"
+             '("stroustrup"
+               (c-offsets-alist
+                (innamespace . -)
+                (inline-open . 0)
+                (inher-cont . c-lineup-multi-inher)
+                (arglist-cont-nonempty . +)
+                (template-args-cont . +))))
+(setq c-default-style "microsoft")
 
 (require 'setup-lsp)
