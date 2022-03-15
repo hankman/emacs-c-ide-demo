@@ -1,3 +1,6 @@
+
+(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
+
 (require 'package)
 (add-to-list 'package-archives
          '("melpa" . "http://melpa.org/packages/") t)
@@ -13,52 +16,8 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 
-(add-to-list 'load-path "~/.emacs.d/custom")
-
-(require 'setup-general)
-(if (version< emacs-version "24.4")
-    (require 'setup-ivy-counsel)
-  (require 'setup-helm)
-  (require 'setup-helm-gtags))
-;; (require 'setup-ggtags)
-(require 'setup-cedet)
-(require 'setup-editing)
-
-(wn-mode)
-
-(load-theme 'zenburn t)
-
 (require 'powerline)
 (powerline-default-theme)
-
-(require 'nyan-mode)
-(nyan-mode)
-
-(global-set-key [(f4)] 'eshell)
-(global-set-key [(f5)] 'goto-line)
-(global-set-key [(f7)] 'compile)
-(global-set-key [(f6)] 'speedbar-get-focus)
-(global-set-key [(f9)] 'list-bookmarks)
-(global-set-key [(f10)] 'bookmark-set)
-(global-set-key [(f3)] 'dired)
-
-
-(defalias 'yes-or-no-p 'y-or-n-p)
-
-;; custom c++
-(require 'yasnippet)
-(yas-global-mode 1)
-
-(c-add-style "microsoft"
-             '("stroustrup"
-               (c-offsets-alist
-                (innamespace . -)
-                (inline-open . 0)
-                (inher-cont . c-lineup-multi-inher)
-                (arglist-cont-nonempty . +)
-                (template-args-cont . +))))
-(setq c-default-style "microsoft")
-
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -229,6 +188,7 @@
  '(pos-tip-foreground-color "#FFFFEF")
  '(rustic-ansi-faces
    ["#3F3F3F" "#CC9393" "#7F9F7F" "#F0DFAF" "#8CD0D3" "#DC8CC3" "#93E0E3" "#DCDCDC"])
+ '(show-paren-mode t)
  '(smartrep-mode-line-active-bg (solarized-color-blend "#7F9F7F" "#4F4F4F" 0.2))
  '(term-default-bg-color "#3F3F3F")
  '(term-default-fg-color "#DCDCCC")
@@ -253,8 +213,52 @@
  '(powerline-inactive0 ((t (:inherit mode-line-inactive))))
  '(powerline-inactive1 ((t (:inherit mode-line-inactive :background "color-247"))))
  '(powerline-inactive2 ((t (:inherit mode-line-inactive :background "color-247"))))
+ '(show-paren-match ((t (:background "color-28" :foreground "color-190" :weight bold))))
  '(vertical-border ((t (:background "color-247" :foreground "color-22"))))
  '(wn-modeline-face ((t (:background "color-28" :foreground "color-52")))))
 
+
+(add-to-list 'load-path "~/.emacs.d/custom")
+
+(require 'setup-general)
+(if (version< emacs-version "24.4")
+    (require 'setup-ivy-counsel)
+  (require 'setup-helm)
+  (require 'setup-helm-gtags))
+;; (require 'setup-ggtags)
+(require 'setup-cedet)
+(require 'setup-editing)
+
+(wn-mode)
+
+(load-theme 'zenburn t)
+
+(require 'nyan-mode)
+(nyan-mode)
+
+(global-set-key [(f4)] 'eshell)
+(global-set-key [(f5)] 'goto-line)
+(global-set-key [(f7)] 'compile)
+(global-set-key [(f6)] 'speedbar-get-focus)
+(global-set-key [(f9)] 'list-bookmarks)
+(global-set-key [(f10)] 'bookmark-set)
+(global-set-key [(f3)] 'dired)
+
+
+(defalias 'yes-or-no-p 'y-or-n-p)
+
+;; custom c++
+(require 'yasnippet)
+(yas-global-mode 1)
+
+(c-add-style "microsoft"
+             '("stroustrup"
+               (c-offsets-alist
+                (innamespace . -)
+                (inline-open . 0)
+                (inher-cont . c-lineup-multi-inher)
+                (arglist-cont-nonempty . +)
+                (template-args-cont . +))))
+(setq c-default-style "microsoft")
 
 (require 'setup-lsp)

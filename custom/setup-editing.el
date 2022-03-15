@@ -47,7 +47,10 @@
 ;; GROUP: Editing -> Undo -> Undo Tree
 (use-package undo-tree
   :init
-  (global-undo-tree-mode 1))
+  (global-undo-tree-mode 1)
+  (setq undo-tree-auto-save-history t)
+  (setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo")))
+  )
 
 
 ;; Package: yasnippet
