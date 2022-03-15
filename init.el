@@ -1,3 +1,6 @@
+
+(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
+
 (require 'package)
 (add-to-list 'package-archives
          '("melpa" . "http://melpa.org/packages/") t)
@@ -229,6 +232,7 @@
  '(pos-tip-foreground-color "#FFFFEF")
  '(rustic-ansi-faces
    ["#3F3F3F" "#CC9393" "#7F9F7F" "#F0DFAF" "#8CD0D3" "#DC8CC3" "#93E0E3" "#DCDCDC"])
+ '(show-paren-mode t)
  '(smartrep-mode-line-active-bg (solarized-color-blend "#7F9F7F" "#4F4F4F" 0.2))
  '(term-default-bg-color "#3F3F3F")
  '(term-default-fg-color "#DCDCCC")
@@ -253,6 +257,7 @@
  '(powerline-inactive0 ((t (:inherit mode-line-inactive))))
  '(powerline-inactive1 ((t (:inherit mode-line-inactive :background "color-247"))))
  '(powerline-inactive2 ((t (:inherit mode-line-inactive :background "color-247"))))
+ '(show-paren-match ((t (:background "color-28" :foreground "color-190" :weight bold))))
  '(vertical-border ((t (:background "color-247" :foreground "color-22"))))
  '(wn-modeline-face ((t (:background "color-28" :foreground "color-52")))))
 
