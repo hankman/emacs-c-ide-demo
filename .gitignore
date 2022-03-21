@@ -61,3 +61,5 @@ ede-projects.el
 recentf
 .dap-breakpoints
 .cache
+
+elpy
